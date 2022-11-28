@@ -27,8 +27,18 @@ class PhotosController < ApplicationController
 
     the_photo.destroy
 
-    #render({ :template => "photos_templates/baii.html.erb"})
-
     redirect_to("/photos")
+  end
+
+  def create
+    #Parameters: {"query_image"=>"a", "query_caption"=>"a", "query_owner_id"=>"a"}
+
+    input_image = params.fetch("query_image")
+    input_caption = params.fetch("query_caption")
+    input_owner_id = params.fetch("query_owner_id")
+
+    
+
+    render({ :template => "photos_templates/create.html.erb"})
   end
 end
